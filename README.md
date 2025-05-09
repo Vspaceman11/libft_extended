@@ -1,69 +1,79 @@
 # 🧰 libft_extended
 
-`libft_extended` is a personal C library that consolidates three essential subprojects developed for learning purposes:
+`libft_extended` is a personal C library that consolidates three foundational subprojects developed for learning purposes:
 
-- 🧱 [`libft`](https://github.com/Vspaceman11/libft_42) — Custom implementations of standard C library functions.
-- 🖨️ `ft_printf` — A simplified version of the standard `printf`.
-- 📄 `get_next_line` — Line-by-line input reading from file descriptors.
+- 🧱 **libft** — Custom implementations of standard C library functions (memory, strings, lists, etc.)
+- 🖨️ **ft_printf** — A simplified version of the standard `printf`.
+- 📄 **get_next_line** — Function to read from a file descriptor line by line.
 
-This repository is intended for personal use and educational integration.
+> ⚠️ This repository is for educational and integration use only. It respects all applicable rules and does **not** contain evaluation solutions.
 
 ---
 
 ## 📦 Features
 
-- Memory & string handling (`memcpy`, `strlcpy`, `strchr`, etc.)
-- Custom `printf` with basic format specifiers: `%c`, `%s`, `%d`, `%x`, `%p`, etc.
-- Buffered file reading with support for multiple file descriptors.
+- Low-level memory and string handling
+- Linked list utilities
+- Minimal `printf` implementation with common format specifiers
+- Buffered line-by-line reading with support for multiple file descriptors
 
 ---
 
 ## 📁 Project Structure
-
+```
 libft_extended/
 ├── inc/ # Header files
 ├── src/ # Source code
-├── Makefile # Compilation instructions
+├── Makefile # Compilation rules
 ├── .gitignore # Ignored files (e.g. *.o, .DS_Store)
-└── README.md # Project overview
-
-yaml
-Copy
-Edit
-
+└── README.md # Project description
+```
 ---
 
-## ⚙️ Build & Usage
+## ⚙️ Build Instructions
 
-Build the library:
+To build the library:
 
 ```bash
 make
-Clean object files:
+```
 
-bash
-Copy
-Edit
+To clean object files:
+```bash
 make clean
-Full clean including library:
-
-bash
-Copy
-Edit
+```
+To remove everything including the binary:
+```bash
+make clean
+```
+To remove everything including the binary:
+```bash
 make fclean
-Rebuild everything:
-
-bash
-Copy
-Edit
+```
+To force rebuild:
+```bash
 make re
-Include libft_extended.a in your own projects by linking the compiled static library and including the headers from inc/.
+```
 
-⚠️ Disclaimer
-This repository contains personal implementations created for educational purposes.
-It does not include any official solutions or content intended to bypass evaluation policies of any institution such as 42 Network.
-Use it responsibly and in accordance with your school's rules.
+🧪 Example Usage
+```c
+#include "libft_extended.h"
 
-📝 License
-This project is open for personal and non-commercial use.
-No warranty or guarantee of correctness is provided.
+int main(void)
+{
+    char *line;
+    int fd = open("file.txt", O_RDONLY);
+
+    while ((line = get_next_line(fd)))
+    {
+        ft_printf("%s", line);
+        free(line);
+    }
+    close(fd);
+    return 0;
+}
+```
+📄 License & Disclaimer
+This project is provided for personal, non-commercial use and educational integration.
+It does not contain or distribute official school content or solutions.
+Respect the rules of your learning institution when using this code.
