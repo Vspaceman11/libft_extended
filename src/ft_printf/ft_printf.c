@@ -6,7 +6,7 @@
 /*   By: vpushkar <vpushkar@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:17:09 by vpushkar          #+#    #+#             */
-/*   Updated: 2025/03/28 14:09:36 by vpushkar         ###   ########.fr       */
+/*   Updated: 2025/05/09 17:22:06 by vpushkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,3 @@ static int	ft_printf_handle_format(char specifier, va_list args)
 		return (-1);
 	return (count);
 }
-
