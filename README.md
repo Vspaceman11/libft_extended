@@ -8,6 +8,14 @@
 
 > ⚠️ This repository is for educational and integration use only. It respects all applicable rules and does **not** contain evaluation solutions.
 
+## ✅ Project Scores
+
+| Project         | Score     |
+|----------------|-----------|
+| libft          | 125/100   |
+| ft_printf      | 125/100   |
+| get_next_line  | 100/100   |
+
 ---
 
 ## 📦 Features
